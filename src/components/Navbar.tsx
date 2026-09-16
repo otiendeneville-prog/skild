@@ -14,7 +14,7 @@ export default function Navbar() {
         </Link>
       </div>
       <div>
-       <link to="/sign-in/$">Sign in</link>
+       <Link to="/sign-in/$">Sign in</Link>
       </div>
     </nav>
   )
