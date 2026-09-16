@@ -54,10 +54,22 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className='font-sans antialiased wrap-anywhere'>
+      <body className='font-sans border border-gray-50 antialiased wrap-anywhere'>
         <ClerkProvider>
-          <Navbar />
-          {children}
+          <div id='root-layout'>
+              <header>
+                <div className='border bg-accent p-4 m-4 w-full flext justify-center'>
+                    <Navbar />
+                </div>
+              </header>
+              <main>
+                <div className='frame'>      
+               {children}
+                </div>
+              </main>
+          </div>
+
+        
           <TanStackDevtools
             config={{
               position: 'bottom-right',

@@ -1,7 +1,13 @@
-import React from 'react'
 
 export default function Navbar() {
   return (
-    <div>Navbar</div>
+    <nav className="w-full bg-white justify-baseline p-5">
+        <div className="brand">
+            <div className="mark">
+            <div className="glyph"/>
+            </div>
+        </div>
+    Navbar
+    </nav>
   )
 }
