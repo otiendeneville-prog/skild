@@ -58,7 +58,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <ClerkProvider>
           <div id='root-layout'>
               <header>
-                <div className='border bg-accent p-4 m-4 w-full flext justify-center'>
+                <div className='border items-center rounded-2xl bg-accent p-4 m-4 w-full flext justify-center'>
                     <Navbar />
                 </div>
               </header>
