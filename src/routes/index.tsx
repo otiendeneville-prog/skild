@@ -35,13 +35,15 @@ function Home() {
       >
         <Terminal className="h-4 w-4 text-purple-400 transition-transform duration-300 group-hover:scale-110 group-hover:text-purple-300" />
         <span>Browse Registry</span>
-      </Link>
-       <Link to='/Skill/new' className='text-amber-50'>
-          Publish Skill
+      </Link><br />
+          <Link className="flex-col mt-7" to='/Skill/new'>
+          Publish Skill 
        </Link>
+      
+       
     </div>
     </section>
-    <div>
+   
          <section>
           <div className='space-y-2'>
               <h2>Recently Created
@@ -49,9 +51,15 @@ function Home() {
                  Skills
                 </span>
               </h2>
+              <p>
+                {""}
+                Latest Skills loaded from a descending order loaded from a database
+              </p>
+          </div>
+          <div>
+            <p>Skill Card</p>
           </div>
         </section> 
-    </div>
      
         </>
   )
