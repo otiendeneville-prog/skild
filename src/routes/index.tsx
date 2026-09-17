@@ -6,6 +6,7 @@ export const Route = createFileRoute('/')({ component: Home })
 
 function Home() {
   return (
+    <>
     <section className="relative flex flex-col items-center justify-center px-4 py-16 text-center md:py-24">
      
       <div className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-600/20 blur-[120px] md:h-96 md:w-96" />
@@ -35,10 +36,23 @@ function Home() {
         <Terminal className="h-4 w-4 text-purple-400 transition-transform duration-300 group-hover:scale-110 group-hover:text-purple-300" />
         <span>Browse Registry</span>
       </Link>
-       <Link to='/Skill/new' btn-secondary>
+       <Link to='/Skill/new' className='text-amber-50'>
           Publish Skill
        </Link>
     </div>
     </section>
+    <div>
+         <section>
+          <div className='space-y-2'>
+              <h2>Recently Created
+                <span className='text-gradient'>
+                 Skills
+                </span>
+              </h2>
+          </div>
+        </section> 
+    </div>
+     
+        </>
   )
 }
