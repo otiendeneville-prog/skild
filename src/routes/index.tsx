@@ -4,7 +4,7 @@ export const Route = createFileRoute('/')({ component: Home })
 
 function Home() {
   return (
-   <div>
+   <div className='text-gradient'>
     <section>
       <div>
         <h1>
