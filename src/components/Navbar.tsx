@@ -10,7 +10,7 @@ export default function Navbar() {
         </div>
         
         <Link to="/">
-          <span>Skild</span>
+          <span className="items-start text-2xl bg-fixed">Skild</span>
         </Link>
       </div>
       <div>

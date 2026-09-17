@@ -4,8 +4,15 @@ export const Route = createFileRoute('/')({ component: Home })
 
 function Home() {
   return (
-    <main>
-      <h1>Hello from Tanstack!</h1>
-    </main>
+   <div>
+    <section>
+      <div>
+        <h1>
+          The registry for <br />
+          <span>Agentic Intelligence</span>
+        </h1>
+      </div>
+    </section>
+   </div>
   )
 }

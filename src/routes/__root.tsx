@@ -6,7 +6,6 @@ import {
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 import Navbar from '../components/Navbar.tsx'; 
-import Crosshair from '../components/Crosshair.tsx';
 
 
 import ClerkProvider from '../integrations/clerk/provider'
@@ -55,11 +54,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className='font-sans border border-gray-50 antialiased wrap-anywhere'>
+      <body className=' bg-slate-950 font-sans antialiased wrap-anywhere'>
         <ClerkProvider>
           <div id='root-layout'>
               <header>
-                <div className='border items-center rounded-2xl bg-accent p-4 m-4 w-full flext justify-center'>
+                <div className='border items-center rounded-2xl bg-accent p-4 m-4 w-full flex justify-center'>
                     <Navbar />
                 </div>
               </header>
