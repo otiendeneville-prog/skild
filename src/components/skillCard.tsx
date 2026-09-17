@@ -31,6 +31,7 @@ export default function skillCard({authorEmail, category,createdAt,description,i
                 </div>
 
               </div>
+              <p className="category">{category}</p>
             </div>
          </div>
       </article >
