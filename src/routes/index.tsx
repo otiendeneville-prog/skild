@@ -2,7 +2,7 @@ import { dummySkills } from '#/lib/dummy-skills'
 import { createFileRoute } from '@tanstack/react-router'
 import { Link } from '@tanstack/react-router'
 import {Terminal} from "lucide-react"
-import {skillCard} from ""
+import  SkillCard  from '../components/skillCard.tsx';
 
 
 export const Route = createFileRoute('/')({ component: Home })
@@ -60,14 +60,14 @@ function Home() {
               </p>
           </div>
           <div>
-            {dummySkills.length > 0 (
+            {dummySkills.length > 0 ?(
               <div>
                 {dummySkills.map((skills)=>(
-                  <SkillCard key={kill.id}{...skills}/>
+                  <SkillCard key={skills.id}{...skills}/>
                 ))}
               </div>
             ):(
-              <p>No skills have been created</p>
+              <p>No skills have been created yet.</p>
             )}
           </div>
         </section> 
