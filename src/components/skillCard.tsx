@@ -19,6 +19,20 @@ export default function skillCard({authorEmail, category,createdAt,description,i
             </div>
         </div>
         <div className="text-slate-600 hover:text-blue-400 transion-colors">registry.sh</div>
+         <div className="body">
+            <div className="meta">
+              <div
+               className="author">
+               <img src="/logo512.png" alt="author avatar" className="avatar" />
+                <div className="author-copy">
+                  <p>Adrian</p>
+                  <p>{new Date(createdAt as string).toLocaleDateString()}</p>
+
+                </div>
+
+              </div>
+            </div>
+         </div>
       </article >
   )
 }
