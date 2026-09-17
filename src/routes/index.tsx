@@ -57,7 +57,7 @@ function Home() {
               </p>
           </div>
           <div>
-            <p>Skill Card</p>
+            {skills}
           </div>
         </section> 
      
