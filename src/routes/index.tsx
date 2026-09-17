@@ -4,8 +4,8 @@ export const Route = createFileRoute('/')({ component: Home })
 
 function Home() {
   return (
-   <div className='text-gradient'>
-    <section>
+  
+    <section className='relative text-gradient items-center flex justify-center'>
       <div>
         <h1>
           The registry for <br />
@@ -17,6 +17,6 @@ function Home() {
         </h1>
       </div>
     </section>
-   </div>
+
   )
 }
