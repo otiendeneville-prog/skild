@@ -1,6 +1,8 @@
+import { dummySkills } from '#/lib/dummy-skills'
 import { createFileRoute } from '@tanstack/react-router'
 import { Link } from '@tanstack/react-router'
 import {Terminal} from "lucide-react"
+
 
 export const Route = createFileRoute('/')({ component: Home })
 
@@ -57,7 +59,13 @@ function Home() {
               </p>
           </div>
           <div>
-            {skills}
+            {dummySkills.length > 0 (
+              <div>
+                
+              </div>
+            ):(
+              <p>No skills have been created</p>
+            )}
           </div>
         </section> 
      
