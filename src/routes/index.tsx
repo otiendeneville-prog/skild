@@ -27,13 +27,18 @@ function Home() {
           A high-performance registry for procedural agent skills. Discover, publish, and operate reusable agent capabilities from a route-driven workspace.
         </p>
       </div>
-      <div>
-        <Link to='/Neuville'>
-           <Terminal size={18}/>
-           <span>Browse Registery</span>
-        
-        </Link>
-      </div>
+     <div className="mt-8 flex justify-center">
+      <Link 
+        to="/Neuville"
+        className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl border border-purple-500/30 bg-purple-500/10 px-6 py-3 text-sm font-semibold text-purple-300 backdrop-blur-md transition-all duration-300 hover:border-purple-500/50 hover:bg-purple-500/20 hover:text-white hover:shadow-[0_0_25px_rgba(168,85,247,0.35)] active:scale-95"
+      >
+        <Terminal className="h-4 w-4 text-purple-400 transition-transform duration-300 group-hover:scale-110 group-hover:text-purple-300" />
+        <span>Browse Registry</span>
+      </Link>
+       <Link to='/Skill/new' btn-secondary>
+          Publish Skill
+       </Link>
+    </div>
     </section>
   )
 }
