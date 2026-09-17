@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router"
 
 export default function Navbar() {
   return (
-    <nav className="flex w-280 items-center justify-between">
+    <nav className="flex w-full items-center justify-between">
       <div>
         <Link to="/" className="transition-opacity hover:opacity-90">
           <span className="text-2xl font-extrabold tracking-tight text-white">

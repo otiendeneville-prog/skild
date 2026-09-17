@@ -1,4 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { Link } from '@tanstack/react-router'
+import {Terminal} from "lucide-react"
 
 export const Route = createFileRoute('/')({ component: Home })
 
@@ -24,6 +26,13 @@ function Home() {
         <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg md:text-xl">
           A high-performance registry for procedural agent skills. Discover, publish, and operate reusable agent capabilities from a route-driven workspace.
         </p>
+      </div>
+      <div>
+        <Link to='/Neuville'>
+           <Terminal size={18}/>
+           <span>Browse Registery</span>
+        
+        </Link>
       </div>
     </section>
   )
