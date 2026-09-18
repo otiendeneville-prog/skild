@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router"; 
-import { Copy, Check, ArrowBigDown, ArrowBigUp } from "lucide-react"; 
+import { Copy, Check, ArrowBigDown, ArrowBigUp, MessageSquare } from "lucide-react"; 
 import { useState } from "react";
+import { Sparkle } from 'lucide-react'
 
 interface SkillRecord {
   authorEmail: string;
@@ -51,9 +52,9 @@ export default function SkillCard({ authorEmail, category, createdAt, descriptio
       <div className="relative z-10 flex flex-col justify-between flex-1 p-4">
         <div className="flex justify-between items-start">
           <div className="author flex items-center gap-3">
-            <img src="/logo512.png" alt="Author Avatar" className="w-10 h-10 rounded-full avatar" />
             <div className="author-copy text-sm">
-              <p className="font-medium text-slate-800 dark:text-slate-200">Adrian</p>
+              <Sparkle className="h-5 w-5 text-purple-400" />
+              <p className="font-medium text-slate-800 dark:text-slate-200">Neuville</p>
               <p className="text-xs text-slate-400">{new Date(createdAt).toLocaleDateString()}</p>
             </div>
           </div>
@@ -88,13 +89,15 @@ export default function SkillCard({ authorEmail, category, createdAt, descriptio
             )}
           </button>
         </div>
-        <div className="footer">
-          <div className="stats">
+        <div className="flex justify-between">
+          <div className="flex">
             <button type="button" className="upvote" disabled>
               <ArrowBigUp size={16} fill="currentColor" />
-
+              <span>{tags.length}</span>
             </button>
-
+              <div className="flex">
+                <MessageSquare size={14} />
+              </div>
           </div>
         </div>
       </div>
