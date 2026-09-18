@@ -1,3 +1,4 @@
+import { Show, SignOutButton } from "@clerk/tanstack-react-start"
 import { Link } from "@tanstack/react-router"
 
 export default function Navbar() {
@@ -12,12 +13,17 @@ export default function Navbar() {
       </div>
 
       <div>
-        <Link 
+       <Show when="signed-out">
+
+         <Link 
           to="/sign-in/$"
           className="relative inline-flex items-center justify-center rounded-xl border border-purple-500/30 bg-purple-500/10 px-5 py-2 text-xs font-semibold text-purple-300 backdrop-blur-md transition-all duration-300 hover:border-purple-500/50 hover:bg-purple-500/20 hover:text-white hover:shadow-[0_0_20px_rgba(168,85,247,0.3)] active:scale-95"
         >
           Sign in
         </Link>
+
+       </Show>
+       
       </div>
     </nav>
   )
