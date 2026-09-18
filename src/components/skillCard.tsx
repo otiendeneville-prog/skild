@@ -36,8 +36,17 @@ export default function skillCard({authorEmail, category,createdAt,description,i
             <div className="ml-2 text-1xl">
               <Link to="skills" className="title-link">
                   <h3 className="text-purple-300">{title}</h3>
-                  <p>{description}</p>
               </Link>
+               <p>{description}</p>
+            </div>
+            <div>
+              <div>
+                <button className="border border-slate-500 rounded-2xl justify-center align-center pl-10 pb-4 mr-2 ml-2 mt-20 mb-2">
+                <span>{">_"}</span>
+                <p className="mr-6">{installCommand}</p>
+                </button>
+                
+              </div>
             </div>
          </div>
       </article >
