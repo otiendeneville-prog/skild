@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router"; 
-import { Copy, Check, ArrowBigDown, ArrowBigUp, MessageSquare } from "lucide-react"; 
+import { Copy, Check, ArrowUpRight, ArrowBigUp, MessageSquare } from "lucide-react"; 
 import { useState } from "react";
-import { Sparkle } from 'lucide-react'
+import { Sparkle,Bookmark } from 'lucide-react'
 
 interface SkillRecord {
   authorEmail: string;
@@ -94,7 +94,7 @@ export default function SkillCard({ authorEmail, category, createdAt, descriptio
    
     <button 
       type="button" 
-      className="flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+      className="flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-md   text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
       disabled
     >
       <ArrowBigUp size={16} fill="currentColor" />
@@ -107,8 +107,19 @@ export default function SkillCard({ authorEmail, category, createdAt, descriptio
       <span>{authorEmail ? 1 : 0}</span>
     </div>
   </div>
+  <div className="flex itmes-center gap-1.5 px-2.5 py-1 text-slate-500">
+    <Link to="/skills" className="open" title={`Open ${title}`}>
+     <ArrowUpRight size={14} />
+          <span>
+            Open
+          </span>
+         
+    </Link>
+    <button type="button" className="save" arial-label='Save state'disabled>
+      <Bookmark size={16}/>
+    </button>
+  </div>
 </div>
-
       </div>
     </article>
   );
