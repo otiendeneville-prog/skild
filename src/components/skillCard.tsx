@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router"; 
-import { Copy, Check } from "lucide-react"; 
+import { Copy, Check, ArrowBigDown, ArrowBigUp, MessageSquare } from "lucide-react"; 
 import { useState } from "react";
+import { Sparkle } from 'lucide-react'
 
 interface SkillRecord {
   authorEmail: string;
@@ -35,7 +36,7 @@ export default function SkillCard({ authorEmail, category, createdAt, descriptio
         className="absolute inset-0 z-0"
       />
       
-      {/* Chrome Window Bar */}
+      
       <div className="relative z-10 justify-between flex items-center h-10 px-4 bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
         <div className="lights flex space-x-2">
           <div className="light red w-3 h-3 rounded-full bg-[#ff5f56]" />
@@ -51,9 +52,9 @@ export default function SkillCard({ authorEmail, category, createdAt, descriptio
       <div className="relative z-10 flex flex-col justify-between flex-1 p-4">
         <div className="flex justify-between items-start">
           <div className="author flex items-center gap-3">
-            <img src="/logo512.png" alt="Author Avatar" className="w-10 h-10 rounded-full avatar" />
             <div className="author-copy text-sm">
-              <p className="font-medium text-slate-800 dark:text-slate-200">Adrian</p>
+              <Sparkle className="h-5 w-5 text-purple-400" />
+              <p className="font-medium text-slate-800 dark:text-slate-200">Neuville</p>
               <p className="text-xs text-slate-400">{new Date(createdAt).toLocaleDateString()}</p>
             </div>
           </div>
@@ -69,7 +70,7 @@ export default function SkillCard({ authorEmail, category, createdAt, descriptio
         </div>
 
         <div className="flex items-center gap-2 mt-auto">
-          {/* Terminal Box */}
+       
           <div className="flex items-center flex-1 font-mono text-xs bg-slate-900 text-slate-300 px-3 py-2 rounded-lg border border-slate-700 overflow-x-auto whitespace-nowrap">
             <span className="text-emerald-400 mr-2">{">_"}</span>
             <span className="select-all">{installCommand}</span>
@@ -88,6 +89,26 @@ export default function SkillCard({ authorEmail, category, createdAt, descriptio
             )}
           </button>
         </div>
+       <div className="flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-3 mt-4">
+  <div className="flex items-center gap-3">
+   
+    <button 
+      type="button" 
+      className="flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+      disabled
+    >
+      <ArrowBigUp size={16} fill="currentColor" />
+      <span>{tags.length}</span>
+    </button>
+
+   
+    <div className="flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 px-1 py-1">
+      <MessageSquare size={14} className="text-slate-400" />
+      <span>{authorEmail ? 1 : 0}</span>
+    </div>
+  </div>
+</div>
+
       </div>
     </article>
   );
