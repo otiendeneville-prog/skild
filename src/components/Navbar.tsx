@@ -1,4 +1,4 @@
-import { Show, SignOutButton } from "@clerk/tanstack-react-start"
+import { Show } from "@clerk/tanstack-react-start"
 import { Link } from "@tanstack/react-router"
 
 export default function Navbar() {
