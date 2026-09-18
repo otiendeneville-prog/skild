@@ -1,5 +1,4 @@
-import { Link } from "lucide-react"
-
+import { Link } from "@tanstack/react-router"; 
 
 export default function skillCard({authorEmail, category,createdAt,description,installCommand,tags,title}:SkillRecord) {
   return (
