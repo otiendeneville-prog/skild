@@ -9,16 +9,16 @@ export default function skillCard({authorEmail, category,createdAt,description,i
         aria-label={`open ${title}`}
         className="overlay"
         />
-         <div className="chrome-bar flex items-center h-10 px-4 bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
+         <div className="chrome-bar justify-between flex items-center h-10 px-4 bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
     
-    {/* Traffic lights container */}
     <div className="lights flex space-x-2">
       <div className="light red w-3 h-3 rounded-full bg-[#ff5f56]" />
       <div className="light amber w-3 h-3 rounded-full bg-[#ffbd2e]" />
       <div className="light green w-3 h-3 rounded-full bg-[#27c93f]" />
     </div>
-        </div>
-        <div className="text-slate-600 hover:text-blue-400 transion-colors">registry.sh</div>
+       
+        <div className="text-slate-600 hover:text-blue-400 transion-colors">REGISTRY.SH</div>
+         </div>
          <div className="body">
             <div className="meta">
               <div
@@ -31,7 +31,7 @@ export default function skillCard({authorEmail, category,createdAt,description,i
                 </div>
 
               </div>
-              <p className="category">{category}</p>
+              <p className="mb-20 text-2xl justify-end ml-270">{category}</p>
             </div>
             <div className="summary">
               <Link to="skills" className="title-link">
