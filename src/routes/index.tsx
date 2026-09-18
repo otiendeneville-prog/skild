@@ -39,10 +39,13 @@ function Home() {
         <Terminal className="h-4 w-4 text-purple-400 transition-transform duration-300 group-hover:scale-110 group-hover:text-purple-300" />
         <span>Browse Registry</span>
       </Link><br />
-          <Link className="flex-col mt-7" to='/Skill/new'>
+      <button className='ml-2 border border-white px-7 rounded-2xl'>
+           <Link className="flex-col mt-7" to='/Skill/new'>
           Publish Skill 
        </Link>
       
+      </button>
+         
        
     </div>
     </section>
