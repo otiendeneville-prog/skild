@@ -1,53 +1,94 @@
 import { Link } from "@tanstack/react-router"; 
+import { Copy, Check } from "lucide-react"; 
+import { useState } from "react";
 
-export default function skillCard({authorEmail, category,createdAt,description,installCommand,tags,title}:SkillRecord) {
+interface SkillRecord {
+  authorEmail: string;
+  category: string;
+  createdAt: string | Date;
+  description: string;
+  installCommand: string;
+  tags: string[];
+  title: string;
+}
+
+export default function SkillCard({ authorEmail, category, createdAt, description, installCommand, tags, title }: SkillRecord) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(installCommand);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy:", err);
+    }
+  };
+
   return (
-    <article className="relative flex flex-col h-full min-h-95 rounded-xl transion-all duration-300 border border-subtle">
-      <Link to="/skills" 
+    <article className="relative flex flex-col h-full min-h-[23.75rem] rounded-xl transition-all duration-300 border border-subtle overflow-hidden">
+      
+      <Link 
+        to="/skills" 
         tabIndex={-1}
         aria-label={`open ${title}`}
-        className="overlay"
-        />
-         <div className="chrome-bar justify-between flex items-center h-10 px-4 bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
-    
-    <div className="lights flex space-x-2">
-      <div className="light red w-3 h-3 rounded-full bg-[#ff5f56]" />
-      <div className="light amber w-3 h-3 rounded-full bg-[#ffbd2e]" />
-      <div className="light green w-3 h-3 rounded-full bg-[#27c93f]" />
-    </div>
+        className="absolute inset-0 z-0"
+      />
+      
+      {/* Chrome Window Bar */}
+      <div className="relative z-10 justify-between flex items-center h-10 px-4 bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
+        <div className="lights flex space-x-2">
+          <div className="light red w-3 h-3 rounded-full bg-[#ff5f56]" />
+          <div className="light amber w-3 h-3 rounded-full bg-[#ffbd2e]" />
+          <div className="light green w-3 h-3 rounded-full bg-[#27c93f]" />
+        </div>
+        <div className="text-slate-600 hover:text-blue-400 transition-colors text-xs font-mono tracking-wider">
+          REGISTRY.SH
+        </div>
+      </div>
+
+      
+      <div className="relative z-10 flex flex-col justify-between flex-1 p-4">
+        <div className="flex justify-between items-start">
+          <div className="author flex items-center gap-3">
+            <img src="/logo512.png" alt="Author Avatar" className="w-10 h-10 rounded-full avatar" />
+            <div className="author-copy text-sm">
+              <p className="font-medium text-slate-800 dark:text-slate-200">Adrian</p>
+              <p className="text-xs text-slate-400">{new Date(createdAt).toLocaleDateString()}</p>
+            </div>
+          </div>
+          <span className="text-xs font-semibold px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full">
+            {category}
+          </span>
+        </div>
+
        
-        <div className="text-slate-600 hover:text-blue-400 transion-colors">REGISTRY.SH</div>
-         </div>
-         <div className="justify-center align-baseline">
-            <div className="ml-2 mt-1">
-              <div
-               className="author">
-               <img src="/logo512.png" alt="Author Avatar" className="avatar" />
-                <div className="author-copy">
-                  <p>Adrian</p>
-                  <p>{new Date(createdAt as string).toLocaleDateString()}</p>
+        <div className="my-4 flex-1">
+          <h3 className="text-xl font-bold text-purple-400 mb-2">{title}</h3>
+          <p className="text-slate-600 dark:text-slate-400 text-sm line-clamp-3">{description}</p>
+        </div>
 
-                </div>
+        <div className="flex items-center gap-2 mt-auto">
+          {/* Terminal Box */}
+          <div className="flex items-center flex-1 font-mono text-xs bg-slate-900 text-slate-300 px-3 py-2 rounded-lg border border-slate-700 overflow-x-auto whitespace-nowrap">
+            <span className="text-emerald-400 mr-2">{">_"}</span>
+            <span className="select-all">{installCommand}</span>
+          </div>
 
-              </div>
-              <p className="mb-10 text-1xl justify-end ml-270">{category}</p>
-            </div>
-            <div className="ml-2 text-1xl">
-              <Link to="skills" className="title-link">
-                  <h3 className="text-purple-300">{title}</h3>
-              </Link>
-               <p>{description}</p>
-            </div>
-            <div>
-              <div>
-                <button className="border border-slate-500 rounded-2xl justify-center align-center pl-10 pb-4 mr-2 ml-2 mt-20 mb-2">
-                <span>{">_"}</span>
-                <p className="mr-6">{installCommand}</p>
-                </button>
-                
-              </div>
-            </div>
-         </div>
-      </article >
-  )
+          <button
+            type="button"
+            onClick={handleCopy}
+            aria-label="Copy install command"
+            className="flex items-center justify-center p-2.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+          >
+            {copied ? (
+              <Check size={16} className="text-emerald-500" />
+            ) : (
+              <Copy size={16} />
+            )}
+          </button>
+        </div>
+      </div>
+    </article>
+  );
 }
