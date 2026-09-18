@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router"; 
-import { Copy, Check } from "lucide-react"; 
+import { Copy, Check, ArrowBigDown, ArrowBigUp } from "lucide-react"; 
 import { useState } from "react";
 
 interface SkillRecord {
@@ -35,7 +35,7 @@ export default function SkillCard({ authorEmail, category, createdAt, descriptio
         className="absolute inset-0 z-0"
       />
       
-      {/* Chrome Window Bar */}
+      
       <div className="relative z-10 justify-between flex items-center h-10 px-4 bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
         <div className="lights flex space-x-2">
           <div className="light red w-3 h-3 rounded-full bg-[#ff5f56]" />
@@ -69,7 +69,7 @@ export default function SkillCard({ authorEmail, category, createdAt, descriptio
         </div>
 
         <div className="flex items-center gap-2 mt-auto">
-          {/* Terminal Box */}
+       
           <div className="flex items-center flex-1 font-mono text-xs bg-slate-900 text-slate-300 px-3 py-2 rounded-lg border border-slate-700 overflow-x-auto whitespace-nowrap">
             <span className="text-emerald-400 mr-2">{">_"}</span>
             <span className="select-all">{installCommand}</span>
@@ -87,6 +87,15 @@ export default function SkillCard({ authorEmail, category, createdAt, descriptio
               <Copy size={16} />
             )}
           </button>
+        </div>
+        <div className="footer">
+          <div className="stats">
+            <button type="button" className="upvote" disabled>
+              <ArrowBigUp size={16} fill="currentColor" />
+
+            </button>
+
+          </div>
         </div>
       </div>
     </article>
