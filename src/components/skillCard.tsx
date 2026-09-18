@@ -1,0 +1,45 @@
+import { Link } from "lucide-react"
+
+
+export default function skillCard({authorEmail, category,createdAt,description,installCommand,tags,title}:SkillRecord) {
+  return (
+    <article className="relative flex flex-col h-full min-h-95 rounded-xl transion-all duration-300 border border-subtle">
+      <Link to="/skills" 
+        tabIndex={-1}
+        aria-label={`open ${title}`}
+        className="overlay"
+        />
+         <div className="chrome-bar flex items-center h-10 px-4 bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
+    
+    {/* Traffic lights container */}
+    <div className="lights flex space-x-2">
+      <div className="light red w-3 h-3 rounded-full bg-[#ff5f56]" />
+      <div className="light amber w-3 h-3 rounded-full bg-[#ffbd2e]" />
+      <div className="light green w-3 h-3 rounded-full bg-[#27c93f]" />
+    </div>
+        </div>
+        <div className="text-slate-600 hover:text-blue-400 transion-colors">registry.sh</div>
+         <div className="body">
+            <div className="meta">
+              <div
+               className="author">
+               <img src="/logo512.png" alt="author avatar" className="avatar" />
+                <div className="author-copy">
+                  <p>Adrian</p>
+                  <p>{new Date(createdAt as string).toLocaleDateString()}</p>
+
+                </div>
+
+              </div>
+              <p className="category">{category}</p>
+            </div>
+            <div className="summary">
+              <Link to="skills" className="title-link">
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+              </Link>
+            </div>
+         </div>
+      </article >
+  )
+}
