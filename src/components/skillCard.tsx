@@ -19,11 +19,11 @@ export default function skillCard({authorEmail, category,createdAt,description,i
        
         <div className="text-slate-600 hover:text-blue-400 transion-colors">REGISTRY.SH</div>
          </div>
-         <div className="body">
-            <div className="meta">
+         <div className="justify-center align-baseline">
+            <div className="ml-2 mt-1">
               <div
                className="author">
-               <img src="/logo512.png" alt="author avatar" className="avatar" />
+               <img src="/logo512.png" alt="Author Avatar" className="avatar" />
                 <div className="author-copy">
                   <p>Adrian</p>
                   <p>{new Date(createdAt as string).toLocaleDateString()}</p>
@@ -31,11 +31,11 @@ export default function skillCard({authorEmail, category,createdAt,description,i
                 </div>
 
               </div>
-              <p className="mb-20 text-2xl justify-end ml-270">{category}</p>
+              <p className="mb-10 text-1xl justify-end ml-270">{category}</p>
             </div>
-            <div className="summary">
+            <div className="ml-2 text-1xl">
               <Link to="skills" className="title-link">
-                  <h3>{title}</h3>
+                  <h3 className="text-purple-300">{title}</h3>
                   <p>{description}</p>
               </Link>
             </div>
