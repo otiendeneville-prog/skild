@@ -1,3 +1,4 @@
+import { SignUp } from "@clerk/tanstack-react-start"
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute('/__auth/sign-up/$')({
@@ -6,7 +7,14 @@ export const Route = createFileRoute('/__auth/sign-up/$')({
 
 function RouteComponent() {
   return (
-    <div>sign-up.$</div>
+     <section>
+     <SignUp
+      routing="path"
+      path="sign-up"
+      sign-upUrl="/sign-in"
+      fallbackRedirectUrl="/"
+     />
+   </section>
   )
 }
 
