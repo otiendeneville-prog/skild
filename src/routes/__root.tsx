@@ -7,7 +7,7 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 import Navbar from '../components/Navbar.tsx'
 
-import ClerkProvider from '../integrations/clerk/provider'
+import { ClerkProvider } from '@clerk/tanstack-react-start'
 
 import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
 
