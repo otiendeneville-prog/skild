@@ -89,17 +89,26 @@ export default function SkillCard({ authorEmail, category, createdAt, descriptio
             )}
           </button>
         </div>
-        <div className="flex justify-between">
-          <div className="flex">
-            <button type="button" className="upvote" disabled>
-              <ArrowBigUp size={16} fill="currentColor" />
-              <span>{tags.length}</span>
-            </button>
-              <div className="flex">
-                <MessageSquare size={14} />
-              </div>
-          </div>
-        </div>
+       <div className="flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-3 mt-4">
+  <div className="flex items-center gap-3">
+   
+    <button 
+      type="button" 
+      className="flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-md bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+      disabled
+    >
+      <ArrowBigUp size={16} fill="currentColor" />
+      <span>{tags.length}</span>
+    </button>
+
+   
+    <div className="flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 px-1 py-1">
+      <MessageSquare size={14} className="text-slate-400" />
+      <span>{authorEmail ? 1 : 0}</span>
+    </div>
+  </div>
+</div>
+
       </div>
     </article>
   );
