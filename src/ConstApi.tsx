@@ -8,19 +8,31 @@ interface post{
 }
 export default function ConstApi() {
 const [posts,setPosts] = useState<post[]>([])
+const [isLoading,setIsLoading] = useState(false)
 
  useEffect(()=>{
     const fetchPost = async ()=>{
+        setIsLoading(true)
         const response = await fetch(`${BASE_URL}/posts`)
         const posts = (await response.json()) as post[];
         setPosts(posts)
+        setIsLoading(false)
     };
     fetchPost();
 
  },[])
+
+   if (isLoading){
+    return(
+      <div>
+        Loading...
+      </div>
+    )
+   }
   return (
     <div className="text-center bg-amber-200">
-      <h1 className="text-2xl bg-purple-400 algin-center jsutify-center px-3 py-5">
+      <
+        h1 className="text-2xl bg-purple-400 algin-center jsutify-center px-3 py-5">
         Data Fetching in React!
       </h1>
       <ul>
