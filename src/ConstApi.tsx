@@ -22,7 +22,10 @@ const [error,setError] = useState();
         catch (e:any){
           setError(e);
         }
-        setIsLoading(false);
+        finally{
+          setIsLoading(false);
+        }
+        
     };
     fetchPost();
 
