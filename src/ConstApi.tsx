@@ -10,6 +10,7 @@ export default function ConstApi() {
 const [posts,setPosts] = useState<post[]>([]);
 const [isLoading,setIsLoading] = useState(false);
 const [error,setError] = useState();
+const [page,setPage] = useState(0);
 
  useEffect(()=>{
     const fetchPost = async ()=>{
