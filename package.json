@@ -10,6 +10,9 @@
     "generate-routes": "tsr generate",
     "build": "vite build",
     "preview": "vite preview",
+     "dev": "vinxi dev",
+    "build": "vinxi build --preset vercel",
+    "start": "vinxi start"
     "format": "biome format",
     "lint": "biome lint",
     "check": "biome check",
