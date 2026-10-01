@@ -12,8 +12,11 @@ const [posts,setPosts] = useState<post[]>([])
  useEffect(()=>{
     const fetchPost = async ()=>{
         const response = await fetch(`${BASE_URL}/posts`)
-        const posts = await response.json();
-    }
+        const posts = (await response.json()) as post[];
+        setPosts(posts)
+    };
+    fetchPost();
+
  },[])
   return (
     <div className="text-center align-center justify-center bg-amber-200">
