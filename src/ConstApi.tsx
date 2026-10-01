@@ -9,14 +9,19 @@ interface post{
 export default function ConstApi() {
 const [posts,setPosts] = useState<post[]>([])
 const [isLoading,setIsLoading] = useState(false)
-const [error,setError] = useState()
+const [error,setError] = useState();
 
  useEffect(()=>{
     const fetchPost = async ()=>{
         setIsLoading(true)
-        const response = await fetch(`${BASE_URL}/posts`)
+
+       
+        try{
+       const response = await fetch(`${BASE_URL}/posts`)
         const posts = (await response.json()) as post[];
-        setPosts(posts)
+       setPosts(posts)
+        }
+        catch{}
         setIsLoading(false)
     };
     fetchPost();
