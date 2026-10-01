@@ -6,14 +6,15 @@
     "#/*": "./src/*"
   },
   "scripts": {
-    "dev": "vinxi dev",
+    "dev": "vite dev --port 3000",
     "generate-routes": "tsr generate",
-    "build": "vinxi build --preset vercel",
-    "start": "node .output/server/index.mjs",
+    "build": "vite build",
     "preview": "vite preview",
+    
     "format": "biome format",
     "lint": "biome lint",
-    "check": "biome check"
+    "check": "biome check",
+    "start": "node .output/server/index.mjs"
   },
   "dependencies": {
     "@clerk/tanstack-react-start": "^1.5.15",
