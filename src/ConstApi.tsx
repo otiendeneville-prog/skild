@@ -16,7 +16,7 @@ const [page,setPage] = useState(0);
     const fetchPost = async ()=>{
         setIsLoading(true)
         try{
-       const response = await fetch(`${BASE_URL}/posts`);
+       const response = await fetch(`${BASE_URL}/posts? page =${page}`);
         const posts = (await response.json()) as post[];
        setPosts(posts)
         }
