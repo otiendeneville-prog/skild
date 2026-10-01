@@ -35,6 +35,13 @@ const [error,setError] = useState();
       </div>
     )
    }
+   if(error){
+    return(
+      <div>
+        Something went wrong please try again later?
+      </div>
+    )
+   }
   return (
     <div className="text-center bg-amber-200">
       <
