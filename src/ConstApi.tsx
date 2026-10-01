@@ -9,6 +9,7 @@ interface post{
 export default function ConstApi() {
 const [posts,setPosts] = useState<post[]>([])
 const [isLoading,setIsLoading] = useState(false)
+const [error,setError] = useState()
 
  useEffect(()=>{
     const fetchPost = async ()=>{
