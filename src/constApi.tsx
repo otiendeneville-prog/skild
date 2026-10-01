@@ -12,6 +12,7 @@ const [posts,setPosts] = useState<post[]>([])
  useEffect(()=>{
     const fetchPost = async ()=>{
         const response = await fetch(`${BASE_URL}/posts`)
+        const posts = await response.json();
     }
  },[])
   return (
