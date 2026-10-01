@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-const BASE_URL = "htttps://jsonplaceholder.typcode.com"
+const BASE_URL = "https://jsonplaceholder.typicode.com"
 
 interface post{
     id:number;
     title:string;
 }
-export default function constApi() {
+export default function ConstApi() {
 const [posts,setPosts] = useState<post[]>([])
 
  useEffect(()=>{
@@ -19,7 +19,7 @@ const [posts,setPosts] = useState<post[]>([])
 
  },[])
   return (
-    <div className="text-center align-center justify-center bg-amber-200">
+    <div className="text-center bg-amber-200">
       <h1 className="text-2xl bg-purple-400 algin-center jsutify-center px-3 py-5">
         Data Fetching in React!
       </h1>

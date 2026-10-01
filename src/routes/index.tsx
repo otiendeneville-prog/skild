@@ -3,7 +3,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Link } from '@tanstack/react-router'
 import {Terminal} from "lucide-react"
 import  SkillCard  from '../components/skillCard.tsx';
-
+import ConstApi from '../ConstApi.tsx';
 
 export const Route = createFileRoute('/')({ component: Home })
 
@@ -41,15 +41,15 @@ function Home() {
       </Link><br />
       <button className='ml-2 border border-white px-7 rounded-2xl hover:text-pink-100 hover:bg-purple-300'>
            <Link className="flex-col mt-7" to='/Skill/new'>
-          Publish Skill 
+           Publish Skills
        </Link>
-      
       </button>
-         
+
        
     </div>
     </section>
-   
+         
+
          <section>
           <div className='space-y-2'>
               <h2>Recently Created
