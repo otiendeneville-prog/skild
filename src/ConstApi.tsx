@@ -35,7 +35,7 @@ const [error,setError] = useState();
       </div>
     )
    }
-   if(error){
+   if(true){
     return(
       <div>
         Something went wrong please try again later?

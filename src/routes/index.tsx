@@ -43,12 +43,13 @@ function Home() {
            <Link className="flex-col mt-7" to='/Skill/new'>
            Publish Skills
        </Link>
+      
       </button>
 
        
     </div>
     </section>
-         
+          <ConstApi /> 
 
          <section>
           <div className='space-y-2'>
