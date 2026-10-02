@@ -2,50 +2,57 @@ import { useEffect, useState } from "react";
 
 const BASE_URL = "https://jsonplaceholder.typicode.com"
 
-interface post{
-    id:number;
-    title:string;
+interface post {
+  id: number;
+  title: string;
 }
-export default function ConstApi() {
-const [posts,setPosts] = useState<post[]>([]);
-const [isLoading,setIsLoading] = useState(false);
-const [error,setError] = useState();
-const [page,setPage] = useState(0);
 
- useEffect(()=>{
-    const fetchPost = async ()=>{
-        setIsLoading(true)
-        try{
-       const response = await fetch(`${BASE_URL}/posts? page =${page}`);
+
+export default function ConstApi() {
+  const [posts, setPosts] = useState<post[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState();
+  const [page, setPage] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      setIsLoading(true)
+      try {
+        const response = await fetch(`${BASE_URL}/posts? page =${page}`);
         const posts = (await response.json()) as post[];
-       setPosts(posts)
-        }
-        catch (e:any){
-          setError(e);
-        }
-        finally{
-          setIsLoading(false);
-        }
-        
+        setPosts(posts)
+      }
+      catch (e: any) {
+        setError(e);
+      }
+      finally {
+        setIsLoading(false);
+      }
+
     };
     fetchPost();
 
- },[])
+  }, [])
 
-   if (isLoading){
-    return(
+  if (isLoading) {
+    return (
       <div>
         Loading...
       </div>
     )
-   }
-   if(true){
-    return(
+  }
+  if (true) {
+    return (
       <div>
         Something went wrong please try again later?
       </div>
     )
-   }
+  }
+  const handleClick = () => {
+    setCount((prevCount) => prevCount + 1
+    )
+  }
   return (
     <div className="text-center bg-amber-200">
       <
@@ -53,12 +60,17 @@ const [page,setPage] = useState(0);
         Data Fetching in React!
       </h1>
       <ul>
-        {posts.map((post)=>{
-            return(
-                <li key={post.id}>{post.title}</li>
-            )
+        {posts.map((post) => {
+          return (
+            <li key={post.id}>{post.title}</li>
+          )
         })}
       </ul>
+      <div>
+        <button onClick={handleClick}>
+          count:{count}
+        </button>
+      </div>
     </div>
   )
 }
