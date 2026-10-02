@@ -1,76 +1,31 @@
-import { useEffect, useState } from "react";
-
-const BASE_URL = "https://jsonplaceholder.typicode.com"
-
-interface post {
-  id: number;
-  title: string;
-}
-
+import { useState } from "react"
 
 export default function ConstApi() {
-  const [posts, setPosts] = useState<post[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState();
-  const [page, setPage] = useState(0);
-  const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    const fetchPost = async () => {
-      setIsLoading(true)
-      try {
-        const response = await fetch(`${BASE_URL}/posts? page =${page}`);
-        const posts = (await response.json()) as post[];
-        setPosts(posts)
-      }
-      catch (e: any) {
-        setError(e);
-      }
-      finally {
-        setIsLoading(false);
-      }
+  const [form, setForm] = useState({
+    name: '',
+    city: '',
+    location: '',
+    Month: '',
+  })
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      name: e.target.value,
+    }
 
-    };
-    fetchPost();
-
-  }, [])
-
-  if (isLoading) {
-    return (
-      <div>
-        Loading...
-      </div>
-    )
-  }
-  if (true) {
-    return (
-      <div>
-        Something went wrong please try again later?
-      </div>
-    )
-  }
-  const handleClick = () => {
-    setCount((prevCount) => prevCount + 1
     )
   }
   return (
-    <div className="text-center bg-amber-200">
-      <
-        h1 className="text-2xl bg-purple-400 algin-center jsutify-center px-3 py-5">
-        Data Fetching in React!
-      </h1>
-      <ul>
-        {posts.map((post) => {
-          return (
-            <li key={post.id}>{post.title}</li>
-          )
-        })}
-      </ul>
-      <div>
-        <button onClick={handleClick}>
-          count:{count}
-        </button>
-      </div>
+    <div>
+      <form>
+        <input type="text"
+          onChange={handleChange}
+          name="name"
+          placeholder="Ente name"
+
+        />
+      </form>
     </div>
   )
 }
